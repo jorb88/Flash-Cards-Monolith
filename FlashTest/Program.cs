@@ -24,7 +24,7 @@ namespace FlashTest
 				if (temp.Length == 0) playing = false;
 				else
 				{
-					double answer = double.Parse(temp);
+					int answer = int.Parse(temp);
 					if (quiz.CheckAnswer(answer) == true)
 						Console.WriteLine("CORRECT");
 					else

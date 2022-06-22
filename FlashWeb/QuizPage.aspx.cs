@@ -35,6 +35,8 @@ namespace FlashWeb
 				lblQuestion.Text = "----------";
 				lblCorrect.Text = "";
 				lblWelcome.Text = "Welcome " + user.FirstName + " " + user.LastName;
+				lblMessage.Visible = false;
+				lblCorrect.Visible = false;
 			}
 		}
 		protected void btnQuestion_Click(object sender, EventArgs e)
@@ -45,25 +47,44 @@ namespace FlashWeb
 			db.SaveChanges();
 			btnQuestion.Enabled = false;
 			btnAnswer.Enabled = true;
+			lblMessage.Visible = false;
+			lblCorrect.Visible = false;
 		}
 		protected void btnAnswer_Click(object sender, EventArgs e)
 		{
 			if (txtAnswer.Text.Trim().Length == 0)
 			{
-				lblCorrect.Text = "Please enter an answer.";
+				lblMessage.Text = "Please enter an answer.";
+				lblMessage.Visible = true;
 				return;
 			}
-			double answer = double.Parse(txtAnswer.Text);
-			if (quiz.CheckAnswer(answer) == true)
+			try
 			{
-				lblCorrect.Text = "Correct";
-				user.Correct++;
-				db.SaveChanges();
+				int answer = int.Parse(txtAnswer.Text);
+				if (quiz.CheckAnswer(answer) == true)
+				{
+					lblCorrect.Text = "Correct";
+					user.Correct++;
+					db.SaveChanges();
+					lblMessage.Visible = false;
+				}
+				else
+				{
+					lblCorrect.Text = "Incorrect";
+					lblMessage.Text = "The correct answer is " + quiz.CalcAnswer();
+					lblMessage.Visible = true;
+				}
+				lblCorrect.Text = lblCorrect.Text + " - " + user.Correct + " correct out of " + user.Tries + " tries";
+				lblCorrect.Visible = true;
+				btnQuestion.Enabled = true;
+				btnAnswer.Enabled = false;
 			}
-			else lblCorrect.Text = "Incorrect";
-			lblCorrect.Text = lblCorrect.Text + " - " + user.Correct + " correct out of " + user.Tries + " tries";
-			btnQuestion.Enabled = true;
-			btnAnswer.Enabled = false;
+			catch (Exception ex)
+            {
+				lblMessage.Text = ex.Message;
+				lblMessage.Text += " Please enter another answer.";
+				lblMessage.Visible = true;
+            }
 		}
 		protected void rbAdd_CheckedChanged(object sender, EventArgs e)
 		{

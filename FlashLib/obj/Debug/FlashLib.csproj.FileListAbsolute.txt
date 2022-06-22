@@ -16,3 +16,9 @@ C:\Users\student\Desktop\Flash Cards\FlashLib\obj\Debug\FlashLib.csprojAssemblyR
 C:\Users\student\Desktop\Flash Cards\FlashLib\obj\Debug\FlashLib.csproj.CoreCompileInputs.cache
 C:\Users\student\Desktop\Flash Cards\FlashLib\obj\Debug\FlashLib.dll
 C:\Users\student\Desktop\Flash Cards\FlashLib\obj\Debug\FlashLib.pdb
+C:\Users\student\Source\Repos\Flash-Cards-Monolith\FlashLib\bin\Debug\FlashLib.dll
+C:\Users\student\Source\Repos\Flash-Cards-Monolith\FlashLib\bin\Debug\FlashLib.pdb
+C:\Users\student\Source\Repos\Flash-Cards-Monolith\FlashLib\obj\Debug\FlashLib.csproj.AssemblyReference.cache
+C:\Users\student\Source\Repos\Flash-Cards-Monolith\FlashLib\obj\Debug\FlashLib.csproj.CoreCompileInputs.cache
+C:\Users\student\Source\Repos\Flash-Cards-Monolith\FlashLib\obj\Debug\FlashLib.dll
+C:\Users\student\Source\Repos\Flash-Cards-Monolith\FlashLib\obj\Debug\FlashLib.pdb
