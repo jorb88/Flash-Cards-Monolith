@@ -8,7 +8,7 @@
     <br /><br />
  This is the simple Flash Cards application <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label> used as an example in various Learning Tree courses.<br />
 	<br />
-    You can use any of these test accountsnts<br />
+    You can use any of these test accounts<br />
     <ul>
         <li>bedrock2</li>
         <li>beebop11</li>
